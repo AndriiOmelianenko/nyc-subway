@@ -1,7 +1,7 @@
 # nyc-subway
 
 App for Google Cloud App Engine.
-implemented via https://codelabs.developers.google.com/codelabs/nyc-subway-station-locator/
+implemented with https://codelabs.developers.google.com/codelabs/nyc-subway-station-locator/
 
 # local appengine for development
 ```
@@ -12,6 +12,13 @@ rm go_appengine_sdk_darwin_amd64-1.9.64.zip
 # fix python env to use python2.7
 sed -i "" "s/env python/env python2.7/" go_appengine/dev_appserver.py
 export PATH=$PATH:$(pwd)/go_appengine/
+```
+
+Install go packages required for back-end:
+```
+go get github.com/paulmach/go.geojson
+go get github.com/dhconnelly/rtreego
+go get github.com/smira/go-point-clustering
 ```
 
 # run app
