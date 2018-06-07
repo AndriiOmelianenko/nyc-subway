@@ -38,3 +38,13 @@ dev_appserver.py app.yaml
 ## see the results
 
 Navigate to `http://localhost:8080`
+
+## additional
+
+```
+$ curl localhost:8080/hello
+Hello, world!
+
+$ curl localhost:8080/version
+Version: 1.0.0
+```
