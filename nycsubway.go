@@ -8,6 +8,8 @@ import (
 	"path/filepath"
 )
 
+const version = "1.0.0"
+
 // GeoJSON is a cache of the NYC Subway Station and Line data.
 var GeoJSON = make(map[string][]byte)
 
@@ -33,7 +35,8 @@ func init() {
 	loadStations()
 	http.HandleFunc("/data/subway-stations", subwayStationsHandler)
 	http.HandleFunc("/data/subway-lines", subwayLinesHandler)
-	http.HandleFunc("/helloworld", helloWorldHandler)
+	http.HandleFunc("/hello", helloWorldHandler)
+	http.HandleFunc("/version", versionHandler)
 }
 
 func subwayLinesHandler(w http.ResponseWriter, r *http.Request) {
@@ -44,4 +47,9 @@ func subwayLinesHandler(w http.ResponseWriter, r *http.Request) {
 func helloWorldHandler(w http.ResponseWriter, r *http.Request) {
 	// Writes Hello, World! to the user's web browser via `w`
 	fmt.Fprint(w, "Hello, world!")
+}
+
+func versionHandler(w http.ResponseWriter, r *http.Request) {
+	// Writes Hello, World! to the user's web browser via `w`
+	fmt.Fprint(w, "Version: ", version)
 }
