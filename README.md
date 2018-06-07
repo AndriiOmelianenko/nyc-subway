@@ -22,6 +22,8 @@ sed -i "" "s/env python/env python2.7/" go_appengine/dev_appserver.py
 export PATH=$PATH:$(pwd)/go_appengine/
 ```
 
+## install golang dependencies
+
 Install go packages required for the back-end:
 ```
 go get github.com/paulmach/go.geojson
